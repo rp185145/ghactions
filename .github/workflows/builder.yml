@@ -25,6 +25,5 @@ jobs:
           for cmd in ghactions
           do
             GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o ${cmd} ./...
-            GOOS=windows GOARCH=amd64 go build -o ${cmd}.exe ./...
             ./${cmd}
           done
