@@ -27,11 +27,7 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body: |
-            Changes in this Release
-            - First Change
-            - Second Change
-          draft: false
+          draft: true
           prerelease: false
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
@@ -41,4 +37,3 @@ jobs:
           asset_name: ghactions
           tag: ${{ github.ref }}
           overwrite: true
-          body: "This is my release text"
